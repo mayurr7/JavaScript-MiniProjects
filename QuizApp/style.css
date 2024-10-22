@@ -6,7 +6,7 @@
 }
 
 body{
-    background-color: rgba(55, 87, 192, 0.745);
+    background-color: rgb(2, 18, 73);
 }
 
 .app{
@@ -32,5 +32,45 @@ body{
 
 .quiz h2{
     font-size: 18px;
-    
+    color: #001e4d;
+    font-weight: 600;
+}
+
+.btn{
+    background: #fff;
+    color: #222;
+    font-weight: 500;
+    width: 100%;
+    height: 20%;
+    border: 1px solid #222;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:hover{
+    background: #222;
+    color: #fff;
+}
+
+.next{
+    width: 150px;
+    padding: 5px;
+    background-color: #093e94;
+    color: #fff;
+    padding: 10px;
+    margin: 20px auto 0;
+    cursor: pointer;
+    border-radius: 1rem;
+    font-size: 1rem;
+    transition: all 0.3;
+    display: none;
+}
+
+.next:hover{
+    background: rgb(10, 31, 124);
+    color: #fff;
 }
