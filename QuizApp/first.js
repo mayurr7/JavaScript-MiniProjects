@@ -1,6 +1,6 @@
 const questions = [
     {
-        questions :  "1.Who wrote the play Romeo and Juliet ? ",
+        question :  "1.Who wrote the play Romeo and Juliet ? ",
         answer : [
             {text :"a) William Shakespeare " , correct : true},
             {text :"b) Charles Dickens" , correct : false},
@@ -83,3 +83,48 @@ const questions = [
     }
 
 ];
+
+
+const questionElement = document.getElementById('question');
+
+const answerBtn = document.getElementById('answer-btn');
+
+const nextBtn = document.getElementById('next');
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+const startQuiz = () =>{
+    currentQuestionIndex = 0;
+    score = 0;
+    nextBtn.innerHTML = "Next";
+    showQuestion();
+}
+
+  function  showQuestion(){
+    resetState();
+    let currentQuestion = questions[currentQuestionIndex];
+    let questionNo = currentQuestionIndex ;
+    questionElement.innerHTML = questionNo +"" + currentQuestion.question; 
+
+    answerBtn.innerHTML = "";
+
+    currentQuestion.answer.forEach(answer => {
+        const button = document.createElement("button");
+        button.innerHTML = answer.text;
+        button.classList.add("btn");
+        answerBtn.appendChild(button);
+        
+    });
+    
+
+}
+
+const resetState = () => {
+    nextBtn.style.d ="none";
+    while(answerBtn.firstChild){
+        answerBtn.removeChild(answerBtn.firstChild);
+    }
+}
+
+startQuiz();
